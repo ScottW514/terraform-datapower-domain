@@ -1,0 +1,14 @@
+{
+  "name": "Terraform Module Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "go-dev",
+  "workspaceFolder": "/workspaces/terraform-datapower-domain/",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-azureterraform"
+      ]
+    }
+  }
+}
