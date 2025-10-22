@@ -5,7 +5,7 @@ The name of the application domain.
 DESCRIPTION
   nullable    = false
   validation {
-    condition = can(regex("^[a-zA-Z0-9_-]{1,128}$", var.app_domain))
+    condition     = can(regex("^[a-zA-Z0-9_-]{1,128}$", var.app_domain))
     error_message = "app_domain must be a between 1 and 128 characters, and only contain letters, numbers, dashes and underscores."
   }
 }

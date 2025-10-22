@@ -21,7 +21,7 @@ To use this module, include it in your Terraform configuration and provide the r
 ### Example
 ```hcl
 module "datapower_domain" {
-  source        = "scottw514/datapower/domain"
+  source        = "scottw514/domain/datapower"
   app_domain    = "my-app-domain"
   domain_availability = true
   file_map = {
@@ -39,7 +39,7 @@ For configurations targeting the `default` domain, additional settings like `sys
 
 ```hcl
 module "datapower_default_domain" {
-  source        = "scottw514/datapower/domain"
+  source        = "scottw514/domain/datapower"
   app_domain    = "default"
   system_settings = {
     audit_reserve = 50
