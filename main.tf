@@ -13,6 +13,7 @@ resource "datapower_domain" "this" {
     audit = var.monitoring_map.audit
     log   = var.monitoring_map.log
   }
+  user_summary = var.user_summary
 }
 
 resource "datapower_domain_availability" "this" {
