@@ -1,5 +1,6 @@
 resource "datapower_domain" "this" {
   app_domain      = var.app_domain
+  provider_target = var.provider_target
   neighbor_domain = var.neighbor_domains
   file_map = {
     copy_from = var.file_map.copy_from
@@ -17,13 +18,15 @@ resource "datapower_domain" "this" {
 }
 
 resource "datapower_domain_availability" "this" {
-  app_domain = var.app_domain
-  enabled    = var.domain_availability
-  depends_on = [datapower_domain.this]
+  app_domain      = var.app_domain
+  provider_target = var.provider_target
+  enabled         = var.domain_availability
+  depends_on      = [datapower_domain.this]
 }
 
 resource "datapower_statistics" "this" {
-  app_domain = var.app_domain
-  enabled    = var.statistics
-  depends_on = [datapower_domain.this]
+  app_domain      = var.app_domain
+  provider_target = var.provider_target
+  enabled         = var.statistics
+  depends_on      = [datapower_domain.this]
 }

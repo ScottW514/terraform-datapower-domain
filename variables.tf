@@ -82,6 +82,14 @@ DESCRIPTION
   }
 }
 
+variable "provider_target" {
+  type        = string
+  description = <<DESCRIPTION
+(Optional) Target host for this resource. If not set, provider will use the top level settings.
+DESCRIPTION
+  default     = null
+}
+
 variable "statistics" {
   type        = bool
   default     = false

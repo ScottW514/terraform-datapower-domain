@@ -1,3 +1,8 @@
+## v0.2.0
+
+- Added `provider_target` variable
+- Bumped `scottw514/datapower` provider version requirement
+
 ## v0.1.2
 
 - Fixed missing `user_summary` in `domain` resource

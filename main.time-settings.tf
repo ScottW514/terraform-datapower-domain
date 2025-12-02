@@ -1,5 +1,6 @@
 resource "datapower_time_settings" "this" {
   count                       = var.app_domain == "default" && var.time_settings != null ? 1 : 0
+  provider_target             = var.provider_target
   local_time_zone             = var.time_settings.local_time_zone
   custom_tz_name              = var.time_settings.custom_tz_name
   utc_direction               = var.time_settings.utc_direction

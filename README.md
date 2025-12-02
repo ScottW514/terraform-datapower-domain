@@ -62,11 +62,11 @@ module "datapower_default_domain" {
 
 The following requirements are needed by this module:
 
-- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.12.2)
+- <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.13.5)
 
-- <a name="requirement_datapower"></a> [datapower](#requirement\_datapower) (>= 0.12.0)
+- <a name="requirement_datapower"></a> [datapower](#requirement\_datapower) (~> 0.15.0)
 
-- <a name="requirement_random"></a> [random](#requirement\_random) (>=3.7.2)
+- <a name="requirement_random"></a> [random](#requirement\_random) (3.7.2)
 
 ## Resources
 
@@ -78,7 +78,7 @@ The following resources are used by this module:
 - [datapower_statistics.this](https://registry.terraform.io/providers/scottw514/datapower/latest/docs/resources/statistics) (resource)
 - [datapower_system_settings.this](https://registry.terraform.io/providers/scottw514/datapower/latest/docs/resources/system_settings) (resource)
 - [datapower_time_settings.this](https://registry.terraform.io/providers/scottw514/datapower/latest/docs/resources/time_settings) (resource)
-- [random_id.ui](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) (resource)
+- [random_id.ui](https://registry.terraform.io/providers/hashicorp/random/3.7.2/docs/resources/id) (resource)
 
 <!-- markdownlint-disable MD013 -->
 ## Required Inputs
@@ -153,6 +153,14 @@ Description: (Optional) Specify which domains have their `local:` directory visi
 -> **Note:** Not valid for the `default` domain.
 
 Type: `list(string)`
+
+Default: `null`
+
+### <a name="input_provider_target"></a> [provider\_target](#input\_provider\_target)
+
+Description: (Optional) Target host for this resource. If not set, provider will use the top level settings.
+
+Type: `string`
 
 Default: `null`
 

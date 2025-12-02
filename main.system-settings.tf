@@ -1,5 +1,6 @@
 resource "datapower_system_settings" "this" {
   count                   = var.app_domain == "default" && var.system_settings != null ? 1 : 0
+  provider_target         = var.provider_target
   audit_reserve           = var.system_settings.audit_reserve
   contact                 = var.system_settings.contact
   custom_ui_file          = (var.system_settings.custom_ui_file != null || var.system_settings.custom_ui_xml != null) ? datapower_file.ui[0].remote_path : null
@@ -25,11 +26,12 @@ resource "random_id" "ui" {
 }
 
 resource "datapower_file" "ui" {
-  count       = var.system_settings != null && (var.system_settings.custom_ui_file != null || var.system_settings.custom_ui_xml != null) ? 1 : 0
-  app_domain  = var.app_domain
-  remote_path = "local:///custom_ui_${random_id.ui[0].hex}.xml"
-  local_path  = var.system_settings.custom_ui_file != null ? var.system_settings.custom_ui_file : null
-  content     = var.system_settings.custom_ui_xml != null ? var.system_settings.custom_ui_xml : null
+  count           = var.system_settings != null && (var.system_settings.custom_ui_file != null || var.system_settings.custom_ui_xml != null) ? 1 : 0
+  app_domain      = var.app_domain
+  provider_target = var.provider_target
+  remote_path     = "local:///custom_ui_${random_id.ui[0].hex}.xml"
+  local_path      = var.system_settings.custom_ui_file != null ? var.system_settings.custom_ui_file : null
+  content         = var.system_settings.custom_ui_xml != null ? var.system_settings.custom_ui_xml : null
   depends_on = [
     datapower_domain.this,
     random_id.ui[0],

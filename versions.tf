@@ -1,13 +1,13 @@
 terraform {
-  required_version = ">= 1.12.2"
+  required_version = "~> 1.13.5"
   required_providers {
     datapower = {
       source  = "scottw514/datapower"
-      version = ">= 0.12.0"
+      version = "~> 0.15.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = ">=3.7.2"
+      version = "3.7.2"
     }
   }
 }
