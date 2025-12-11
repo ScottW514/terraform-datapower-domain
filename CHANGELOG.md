@@ -1,3 +1,7 @@
+## v0.2.1
+
+- Updated terraform version
+
 ## v0.2.0
 
 - Added `provider_target` variable
