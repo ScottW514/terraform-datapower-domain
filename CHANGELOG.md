@@ -1,3 +1,7 @@
+## v0.3.0
+
+- Updated provider version
+
 ## v0.2.1
 
 - Updated terraform version

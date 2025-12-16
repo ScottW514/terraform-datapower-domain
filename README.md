@@ -64,7 +64,7 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.13.0)
 
-- <a name="requirement_datapower"></a> [datapower](#requirement\_datapower) (~> 0.15.0)
+- <a name="requirement_datapower"></a> [datapower](#requirement\_datapower) (>= 0.16.0)
 
 - <a name="requirement_random"></a> [random](#requirement\_random) (3.7.2)
 
